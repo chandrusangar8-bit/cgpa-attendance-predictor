@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>aec website</title>
+  <link id="circleFavicon" rel="icon" href="icon.jpeg" type="image/jpeg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="home-page">
+  <!-- Official College Top Navbar -->
+  <header class="college-navbar">
+    <div class="nav-container">
+      <div class="college-brand">
+        <img src="icon.jpeg" alt="Annapoorana Engineering College" class="college-crest-img" />
+        <div class="college-title-group">
+          <span class="college-name">Annapoorana Engineering College</span>
+          <span class="college-sub">Autonomous | Approved by AICTE &amp; Affiliated to Anna University, Chennai</span>
+        </div>
+      </div>
+
+      <nav class="college-nav-links">
+        <a href="index.html" class="active-link">Home</a>
+        <a href="portal.html">CGPA Calculator</a>
+        <a href="portal.html">Attendance</a>
+        <a href="portal.html" class="nav-cta">Student Portal</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Full-Screen Campus Hero Section with Sharp aec.jpg -->
+  <section class="college-hero">
+    <img src="aec.jpg" alt="Annapoorana Engineering College Campus" class="hero-campus-img" />
+    <div class="hero-gradient-overlay"></div>
+
+    <div class="hero-content-wrap">
+      <span class="hero-badge">STUDENT ACADEMIC PORTAL</span>
+      <h1>Welcome to Annapoorana Engineering College</h1>
+      <p>
+        Track your semester GPA/CGPA under Anna University regulations and calculate safe classes or recovery targets for 75% attendance in one place.
+      </p>
+      <div class="hero-btn-group">
+        <a href="portal.html" class="primary-btn">Check CGPA and Attendance &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom Campus Quick Info Strip -->
+  <section class="college-info-strip">
+    <div class="info-strip-grid">
+      <div class="info-item">
+        <strong>Anna University Grading</strong>
+        <span>Instant 10-point scale (O, A+, A, B+, B, C) weighted GPA calculation</span>
+      </div>
+      <div class="info-item">
+        <strong>75% Attendance Predictor</strong>
+        <span>Know exact safe bunk classes or continuous classes needed</span>
+      </div>
+      <div class="info-item">
+        <strong>Auto-Saved Session</strong>
+        <span>Your subjects and attendance stay saved locally until you reset</span>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function makeRoundFavicon() {
+      const link = document.getElementById("circleFavicon");
+      if (!link) return;
+      const img = new Image();
+      img.onload = function () {
+        const size = 64;
+        const canvas = document.createElement("canvas");
+        canvas.width = size;
+        canvas.height = size;
+        const ctx = canvas.getContext("2d");
+        ctx.beginPath();
+        ctx.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.clip();
+        ctx.drawImage(img, 0, 0, size, size);
+        link.href = canvas.toDataURL("image/png");
+      };
+      img.src = "icon.jpeg";
+    })();
+  </script>
+</body>
+</html>
